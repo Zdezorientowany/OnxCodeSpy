@@ -10,25 +10,26 @@ if ( !function_exists('spyOn') ) {
         $file = basename($backtrace[0]['file']);
         $line = $backtrace[0]['line'];
 
-        $data = [
-            'data' => $object,
-            'file' => $file,
-            'line' => $line,
-        ];
-
         try {
-            // Send a POST request to the specified endpoint
-            $response = Http::post('localhost:8100/api/spies/', $data);
+            $jsonObject = json_encode($object);
 
-            // Optionally, check the response status code or content here
+            $data = [
+                'data' => $jsonObject,
+                'file' => $file,
+                'line' => $line,
+            ];
+
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+            ])->post('localhost:8100/api/spies/', $data);
+
             if ($response->successful()) {
-                // Return the original object or possibly the response itself
                 return $response->json();
             }else{
                 return $response;
             }
         } catch (\Exception $e) {
-            // Handle exceptions and return a detailed error message
             return response()->json([
                 'error' => 'Request failed',
                 'message' => $e->getMessage(),
