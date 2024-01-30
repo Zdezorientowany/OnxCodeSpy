@@ -7,9 +7,11 @@ function spy($object)
 {
     $data = ['data' => $object];
 
+    dd($data);
+
     try {
         // Send a POST request to the specified endpoint
-        $response = Http::post('http://localhost:8100/api/spies/', $data);
+        $response = Http::post('localhost:8100/api/spies/', $data);
 
         // Optionally, check the response status code or content here
         if ($response->successful()) {
