@@ -1,6 +1,6 @@
 <?php
 
-namespace Onx\CodeSpy;
+namespace Onx\CodeSpy\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Onx\CodeSpy\Spy;
