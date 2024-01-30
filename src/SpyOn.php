@@ -4,16 +4,16 @@ namespace Onx\CodeSpy;
 
 use Illuminate\Support\Facades\Facade;
 
-class Spy extends Facade
+class SpyOn extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'spy';
+        return 'spyOn';
     }
 
-    public static function spy($object)
+    public static function spyOn($object)
     {
-        return spy($object);
+        return spyOn($object);
     }
 
 }

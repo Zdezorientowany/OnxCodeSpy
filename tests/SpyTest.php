@@ -1,17 +1,17 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Onx\CodeSpy\Spy;
+use Onx\CodeSpy\SpyOn;
 
 
-class SpyTest extends TestCase
+class SpyOnTest extends TestCase
 {
 
     public function testSpyReturnObject()
     {
         $data = new stdClass();
 
-        $spy = spy($data);
+        $spy = spyOn($data);
 
         $this->assertInstanceOf(stdClass::class, $spy);
     }

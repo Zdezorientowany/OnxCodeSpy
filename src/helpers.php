@@ -2,12 +2,10 @@
 
 use Illuminate\Support\Facades\Http;
 
-if ( !function_exists('spy') ) {
-function spy($object)
+if ( !function_exists('spyOn') ) {
+function spyOn($object)
 {
     $data = ['data' => $object];
-
-    dd($data);
 
     try {
         // Send a POST request to the specified endpoint

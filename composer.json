@@ -30,7 +30,7 @@
         "Onx\\CodeSpy\\Providers\\SpyServiceProvider"
       ],
       "aliases": {
-        "Spy": "Onx\\CodeSpy\\Spy"
+        "SpyOn": "Onx\\CodeSpy\\SpyOn"
       }
     }
   },
