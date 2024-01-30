@@ -27,7 +27,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Onx\\CodeSpy\\SpyServiceProvider"
+        "Onx\\CodeSpy\\Providers\\SpyServiceProvider"
       ],
       "aliases": {
         "Spy": "Onx\\CodeSpy\\Spy"
