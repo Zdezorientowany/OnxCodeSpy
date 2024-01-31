@@ -7,7 +7,7 @@ if ( !function_exists('spyOn') ) {
     {
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
 
-        $file = basename($backtrace[0]['file']);
+        $file = $backtrace[0]['file'];
         $line = $backtrace[0]['line'];
 
         try {
