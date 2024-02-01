@@ -15,7 +15,7 @@ class SpyOnTest extends OrchestraTestCase
     public function testSpyOnSuccess()
     {
         Http::fake([
-            'localhost:8100/api/spies/' => Http::response(['success' => true], 200),
+            'host.docker.internal:8100/api/spies/' => Http::response(['success' => true], 200),
         ]);
 
         $object = ['key' => 'value'];
@@ -28,7 +28,7 @@ class SpyOnTest extends OrchestraTestCase
     public function testSpyOnHttpError()
     {
         Http::fake([
-            'localhost:8100/api/spies/' => Http::response(['error' => 'Bad Request'], 400),
+            'host.docker.internal:8100/api/spies/' => Http::response(['error' => 'Bad Request'], 400),
         ]);
 
         $object = ['key' => 'value'];
