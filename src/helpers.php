@@ -22,7 +22,7 @@ if ( !function_exists('spyOn') ) {
             $response = Http::withHeaders([
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
-            ])->post('localhost:8100/api/spies/', $data);
+            ])->post('host.docker.internal:8100/api/spies/', $data);
 
             if ($response->successful()) {
                 return $response->json();
